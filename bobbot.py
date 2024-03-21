@@ -18,7 +18,10 @@ async def poke(ctx):
               "Keep your nose clean, citizen.",
              "If you're traveling outside the city, you watch yourself, ya hear?",
              "It's a peaceful day. Don't go and change that on my watch."]
-    quote_idx = random.randint(0, len(quotes) - 1)
-    await ctx.send(quotes[quote_idx])
+    await ctx.send(random.choice(quotes))
+
+@bot.command()
+async def say(ctx, arg):
+   await ctx.send(arg)
 
 bot.run(secret_key.token)
